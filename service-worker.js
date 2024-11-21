@@ -131,30 +131,3 @@ chrome.contextMenus.onClicked.addListener(async (selectionData) => {
         });
     });
 });
-
-/*
-chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
-    if(message.type == 'request' && message.op == 'update'){
-        _logger().debug('Receive request(op:update) message#' + message.id + ' in the service worker.');
-
-        new Promise(resolve => {
-            chrome.tabs.query({url: message.url.match(RegExp('https://[^/]+'))+'/*'}, tabs => {
-                tabs.forEach(tab => {
-                    resolve(tab.id);
-                });
-            });
-        }).then(tabId => {
-            chrome.tabs.update(tabId, {url:message.url}).then(tab => {
-                _logger().debug('Send response message#' + message.id + ' in the service worker.');
-                sendResponse({id:message.id, type:'response', op:'ack', tabId:tabId});
-            }).then(tab => {
-                return Promise.resolve();
-            });
-        });
-    }else{
-        _logger().debug('Receive unknown message#' + message.id + ': ', message);
-    };
-
-    return true;
-});
-*/
