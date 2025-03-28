@@ -103,7 +103,8 @@ chrome.contextMenus.onClicked.addListener(async (selectionData) => {
     _logger().info('keyward', keyward);
 
     let platformPrefix = {
-        mandarake: 'https://order.mandarake.co.jp/order/listPage/list?keyword=',
+        //soldOut: 1                                      -> 売り切れを表示しない
+        mandarake: 'https://order.mandarake.co.jp/order/listPage/list?soldOut=1&keyword=',
         surugaya: 'https://www.suruga-ya.jp/search?search_word=',
         // exso: 1                                        -> 販売中のみ表示
         offmall: 'https://netmall.hardoff.co.jp/search/?exso=1&q=',
