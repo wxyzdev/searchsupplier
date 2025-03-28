@@ -97,8 +97,10 @@ chrome.runtime.onInstalled.addListener(() => {
 })
 
 chrome.contextMenus.onClicked.addListener(async (selectionData) => {
-    let keyward = selectionData.selectionText; 
-    _logger().debug('keyward', keyward);
+    let keyward = selectionData.selectionText;
+    keyward = keyward.replace('&', '%26').replace(' ', '%20');
+    //_logger().debug('keyward', keyward);
+    _logger().info('keyward', keyward);
 
     let platformPrefix = {
         mandarake: 'https://order.mandarake.co.jp/order/listPage/list?keyword=',
