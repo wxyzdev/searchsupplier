@@ -98,7 +98,7 @@ chrome.runtime.onInstalled.addListener(() => {
 
 chrome.contextMenus.onClicked.addListener(async (selectionData) => {
     let keyward = selectionData.selectionText;
-    keyward = keyward.replace('&', '%26').replace(' ', '%20').replace('%', '%25');
+    keyward = keyward.replace('&', '%26').replace(' ', '%20').replace('　', '%20').replace('%', '%25');
     //_logger().debug('keyward', keyward);
     _logger().info('keyward', keyward);
 
