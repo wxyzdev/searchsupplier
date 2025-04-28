@@ -114,7 +114,7 @@ chrome.contextMenus.onClicked.addListener(async (selectionData) => {
         //search_condition_id: 1cx0zHHN0HTEcaWNkHTE       -> [販売中] && [新品、未使用]
         //search_condition_id: 1cx0zHHN0HTEcaWNkHTEeMh4z  -> [販売中] && [新品、未使用 || 未使用に近い || 目立った傷や汚れなし]
         //mercari: 'https://jp.mercari.com/search?search_condition_id=1cx0zHHN0HTEcaWNkHTE&keyword='
-        mercari: 'https://jp.mercari.com/search?item_condition_id=1&status=on_sale'
+        mercari: 'https://jp.mercari.com/search?item_condition_id=1&status=on_sale&keyword='
     }
 
     Object.keys(platformPrefix).forEach(async (platform) => {
