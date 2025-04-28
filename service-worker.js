@@ -98,7 +98,7 @@ chrome.runtime.onInstalled.addListener(() => {
 
 chrome.contextMenus.onClicked.addListener(async (selectionData) => {
     let keyward = selectionData.selectionText;
-    keyward = keyward.replace('&', '%26').replace(' ', '%20');
+    keyward = keyward.replace('&', '%26').replace(' ', '%20').replace(' ', '%25');
     //_logger().debug('keyward', keyward);
     _logger().info('keyward', keyward);
 
@@ -113,7 +113,8 @@ chrome.contextMenus.onClicked.addListener(async (selectionData) => {
         yahuoku: 'https://auctions.yahoo.co.jp/search/search?fixed=1&p=',
         //search_condition_id: 1cx0zHHN0HTEcaWNkHTE       -> [販売中] && [新品、未使用]
         //search_condition_id: 1cx0zHHN0HTEcaWNkHTEeMh4z  -> [販売中] && [新品、未使用 || 未使用に近い || 目立った傷や汚れなし]
-        mercari: 'https://jp.mercari.com/search?search_condition_id=1cx0zHHN0HTEcaWNkHTE&keyword='
+        //mercari: 'https://jp.mercari.com/search?search_condition_id=1cx0zHHN0HTEcaWNkHTE&keyword='
+        mercari: 'https://jp.mercari.com/search?item_condition_id=1&status=on_sale'
     }
 
     Object.keys(platformPrefix).forEach(async (platform) => {
